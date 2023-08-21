@@ -79,7 +79,7 @@
             </textField>
             <textField>
                 <reportElement x="0" y="60" width="150" height="20" uuid="8af6b3fe-12b1-4276-b700-9478e40933d8"/>
-                <textFieldExpression><![CDATA["Base price per night: "+$P{price}]]></textFieldExpression>
+                <textFieldExpression><![CDATA["Base price per night: "+$P{price}+" €"]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement x="0" y="80" width="100" height="20" uuid="f017acb3-b194-44ff-b1a9-57aeca57178b"/>
