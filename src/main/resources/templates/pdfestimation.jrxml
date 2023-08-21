@@ -6,18 +6,18 @@
     <parameter name="apartment" class="java.lang.String"/>
     <parameter name="idNumber" class="java.lang.String"/>
     <parameter name="numberOfGuests" class="java.lang.Integer"/>
-    <parameter name="numberOfStays" class="java.lang.String"/>
+    <parameter name="numberOfStays" class="java.lang.Integer"/>
     <parameter name="arrivalDate" class="java.lang.String"/>
     <parameter name="endDate" class="java.lang.String"/>
-    <parameter name="discount" class="java.math.BigDecimal"/>
+    <parameter name="discount" class="java.lang.Double"/>
     <parameter name="issuer" class="java.lang.String"/>
     <parameter name="issueDate" class="java.lang.String"/>
     <parameter name="price" class="java.lang.Double"/>
     <parameter name="totalPrice" class="java.lang.Double"/>
-    <parameter name="invoiceNumber" class="java.lang.Integer"/>
+    <parameter name="invoiceNumber" class="java.lang.String"/>
     <parameter name="telephone" class="java.lang.String"/>
     <parameter name="email" class="java.lang.String"/>
-    <parameter name="IssuerId" class="java.lang.String"/>
+    <parameter name="issuerId" class="java.lang.String"/>
     <queryString>
         <![CDATA[]]>
     </queryString>
@@ -79,7 +79,7 @@
             </textField>
             <textField>
                 <reportElement x="0" y="60" width="150" height="20" uuid="8af6b3fe-12b1-4276-b700-9478e40933d8"/>
-                <textFieldExpression><![CDATA["Base price: "+$P{price}]]></textFieldExpression>
+                <textFieldExpression><![CDATA["Base price per night: "+$P{price}]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement x="0" y="80" width="100" height="20" uuid="f017acb3-b194-44ff-b1a9-57aeca57178b"/>
@@ -137,7 +137,7 @@
             </textField>
             <textField>
                 <reportElement x="0" y="39" width="260" height="19" uuid="d3277edf-07f8-439d-9cd9-649c01be2b76"/>
-                <textFieldExpression><![CDATA["Issuer ID:  "+$P{IssuerId}]]></textFieldExpression>
+                <textFieldExpression><![CDATA["Issuer ID:  "+$P{issuerId}]]></textFieldExpression>
             </textField>
         </band>
     </pageFooter>
