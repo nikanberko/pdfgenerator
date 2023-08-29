@@ -39,7 +39,6 @@ public class PdfGeneratorController {
                     .contentType(MediaType.APPLICATION_PDF)
                     .body(pdfBytes);
         } catch (Exception e) {
-            // Handle exceptions appropriately
             return ResponseEntity.badRequest().body(null);
         }
     }

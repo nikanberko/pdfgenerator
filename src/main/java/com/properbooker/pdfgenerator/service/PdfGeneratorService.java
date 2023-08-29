@@ -17,15 +17,12 @@ public class PdfGeneratorService {
     private final ObjectMapper objectMapper;
 
     public byte[] generatePdfFromJson(EstimationDetails details) throws Exception {
-        JasperReport jasperReport = compileReport(); // Compile the JRXML template
+        JasperReport jasperReport = compileReport();
 
-        // Convert EstimationDetails to JSON string
         String json = objectMapper.writeValueAsString(details);
 
-        // Create a JSON data source
         JsonDataSource dataSource = new JsonDataSource(new ByteArrayInputStream(json.getBytes()));
 
-        // Set report parameters
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("name", details.getName());
         parameters.put("apartment", details.getApartment());
@@ -44,13 +41,12 @@ public class PdfGeneratorService {
         parameters.put("email", details.getEmail());
         parameters.put("issuerId", details.getIssuerId());
 
-        // Generate PDF using the compiled Jasper Report template
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         return JasperExportManager.exportReportToPdf(jasperPrint);
     }
 
     private JasperReport compileReport() throws JRException {
-        String jrxmlPath = "src/main/resources/templates/pdfestimation.jrxml"; // Replace with the actual path
+        String jrxmlPath = "src/main/resources/templates/pdfestimation.jrxml";
         return JasperCompileManager.compileReport(jrxmlPath);
     }
 }
